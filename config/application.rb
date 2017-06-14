@@ -22,5 +22,14 @@ module Blog
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    config.web_console.whitelisted_ips = '122.248.101.50'
+    
+    # Add the fonts path
+    config.assets.enabled = true
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
+    # Precompile additional assets
+    config.assets.precompile += %w(  *.svg *.eot *.woff *.ttf )
   end
 end
